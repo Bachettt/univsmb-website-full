@@ -4,7 +4,7 @@
 
 If you clone this repository you need change the name of the Github account below :
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/epostel-univ-smb/univsmb-website-full)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/bachettt/univsmb-website-full)
 
 ## Setup 
 
