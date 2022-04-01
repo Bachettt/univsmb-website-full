@@ -1,0 +1,35 @@
+{% extends 'tmpl/layout.html' %}
+
+{% block title %}Client{% endblock %}
+{% block breadcrumb %}Client{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="css/default.css">
+{% endblock %}
+{% block scripts %}
+{% endblock %}
+
+{% block content %}
+<h2>Liste des Filtres</h2>
+
+<table id="myTab" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nom du Filtre</th>
+        <th>Adresse IP Source</th>
+        <th>Port Source</th>
+        <th>Adresse IP Dest</th>
+        <th>Port Dest</th>
+        <th>Protocole</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+{% for row in items %}
+
+<div class="alert alert-primary" role="alert">
+    <strong>Le {{ row.nameFilter }} - {{ row.ipAddress }}</strong>
+    <br />{{ row.port }}
+</div>
+
+{% endfor %}
+{% endblock %}

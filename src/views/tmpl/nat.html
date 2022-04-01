@@ -10,6 +10,19 @@
 
 {% block content %}
 <h2>Liste des règles Nat</h2>
+
+<table id="myTab" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nom de la regle</th>
+        <th>Adresse IP Interne</th>
+        <th>Adresse IP Externe</th>
+        <th>Port</th>
+        <th>Protocole</th>
+      </tr>
+    </thead>
+    <tbody>
+        
 {% for row in items %}
 
 <div class="alert alert-primary" role="alert">

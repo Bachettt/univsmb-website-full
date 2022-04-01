@@ -24,6 +24,11 @@ app.get('/alias', alias.render);
 var nat = require('./controllers/iptables/nat');
 app.get('/nat', nat.render);
 
+var filter = require('./controllers/iptables/filter');
+app.get('/filter', filter.render);
+
+
+
 // Routes statiques
 app.use('/css/bootstrap.min.css', express.static('node_modules/bootstrap/dist/css/bootstrap.min.css'));
 app.use('/css/bootstrap.min.css.map', express.static('node_modules/bootstrap/dist/css/bootstrap.min.css.map'));
@@ -33,6 +38,8 @@ app.use('/js/bootstrap.min.js', express.static('node_modules/bootstrap/dist/js/b
 app.use('/js/bootstrap.min.js.map', express.static('node_modules/bootstrap/dist/js/bootstrap.min.js.map'));
 app.use('/js/jquery.slim.js', express.static('node_modules/jquery/dist/jquery.slim.js'));
 app.use('/js/popper.min.js', express.static('node_modules/popper.js/dist/popper.min.js'));
+
+app.use('/images/iptables.jpg', express.static('views/images/iptables.jpg'));
 
 // Démarrage du serveur
 app.listen(N_PORT);
