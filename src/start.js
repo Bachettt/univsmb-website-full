@@ -15,17 +15,17 @@ templateEngine.configure('views', {
     express: app
 });
 
-var start = require('./controllers/iptables/nat');
+var start = require('./controllers/iptables/home');
 app.get('/', start.render);
 
 var alias = require('./controllers/iptables/alias');
 app.get('/alias', alias.render);
 
-var nat = require('./controllers/iptables/nat');
-app.get('/nat', nat.render);
+var home = require('./controllers/iptables/home');
+app.get('/home', home.render);
 
-var filter = require('./controllers/iptables/filter');
-app.get('/filter', filter.render);
+var contact = require('./controllers/iptables/contact');
+app.get('/contact', contact.render);
 
 
 
@@ -39,7 +39,7 @@ app.use('/js/bootstrap.min.js.map', express.static('node_modules/bootstrap/dist/
 app.use('/js/jquery.slim.js', express.static('node_modules/jquery/dist/jquery.slim.js'));
 app.use('/js/popper.min.js', express.static('node_modules/popper.js/dist/popper.min.js'));
 
-app.use('/images/iptables.jpg', express.static('views/images/iptables.jpg'));
+app.use('/images/musilac.jpg', express.static('views/images/musilac.jpg'));
 
 // Démarrage du serveur
 app.listen(N_PORT);

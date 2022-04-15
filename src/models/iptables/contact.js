@@ -2,7 +2,7 @@ var sql = require('../db/db_mariadb');
 
 var connexion = null;
 
-class Filter {
+class Contact {
   constructor(req, res) {
     this.req = req;
     this.res = res;
@@ -33,4 +33,4 @@ class Filter {
   }
 }
 
-module.exports = Filter;
+module.exports = Contact;
