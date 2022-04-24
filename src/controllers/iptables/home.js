@@ -6,7 +6,7 @@ exports.render = async function (req, res) {
 
   await defaultComponent.initialize();
   
-  var natList = await defaultComponent.getNatList();
+  var HomeList = await defaultComponent.getHomeList();
 
-  res.render('tmpl/home.html', { items: natList});
+  res.render('tmpl/home.html', { items: HomeList});
 }

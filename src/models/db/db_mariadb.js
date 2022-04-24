@@ -9,7 +9,7 @@ class DbMariaDB {
       host: '127.0.0.1',
       user: 'websiteaccount',
       password: 'passwordDbUniv01',
-      database: 'webiptables'
+      database: 'Musique'
     };
   }
 

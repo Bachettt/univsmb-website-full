@@ -11,6 +11,24 @@
 {% block content %}
 <h2>Actualité musique</h2>
 
+<table id="myTab" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Titre</th>
+        <th>Genre</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for row in items %}
+        <tr>
+            <td>{{ row.id }}</td>
+            <td>{{ row.Titre }}</td>
+            <td>{{ row.Genre }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
 
         
 {% for row in items %}
