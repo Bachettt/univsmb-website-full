@@ -8,15 +8,18 @@
 {% block scripts %}
 {% endblock %}
 
+<script src="src/models/iptables/home.js"></script>
+
 {% block content %}
+
 <h2>Actualité musique</h2>
 
 <table id="myTab" class="table table-striped">
     <thead>
-      <tr>
-        <th>Id</th>
-        <th>Titre</th>
-        <th>Genre</th>
+      <tr class="Header">
+        <th onclick="sortTable(0)">ID</th>
+        <th onclick="sortTable(1)">Titre</th>
+        <th onclick="sortTable(1)">Genre</th>
       </tr>
     </thead>
     <tbody>
@@ -30,10 +33,5 @@
     </tbody>
 </table>
 
-        
-{% for row in items %}
-
-
-
-{% endfor %}
 {% endblock %}
+

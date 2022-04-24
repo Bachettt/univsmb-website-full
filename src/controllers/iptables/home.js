@@ -10,3 +10,5 @@ exports.render = async function (req, res) {
 
   res.render('tmpl/home.html', { items: HomeList});
 }
+
+

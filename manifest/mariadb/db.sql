@@ -1,37 +1,22 @@
-CREATE DATABASE IF NOT EXISTS `webiptables` ;
+CREATE DATABASE IF NOT EXISTS `Musique` ;
 
-USE `webiptables`;
+USE `Musique`;
 
-CREATE TABLE IF NOT EXISTS `webiptables`.`nat_rules` (
-  `idNat` int(11) DEFAULT NULL,
-  `nameNat` varchar(50) DEFAULT NULL,
-  `ipAddress` varchar(15) DEFAULT NULL,
-  `port` smallint(6) DEFAULT NULL,
-  `type` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-CREATE TABLE IF NOT EXISTS `webiptables`.`nat_alias` (
+CREATE TABLE IF NOT EXISTS `Musique`.`Article` (
   `id` int(11) DEFAULT NULL,
-  `name` varchar(50) DEFAULT NULL,
-  `ipAddress` varchar(15) DEFAULT NULL,
-  `port` smallint(6) DEFAULT NULL
+  `Titre` varchar(50) DEFAULT NULL,
+  `Genre` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS `webiptables`.`nat_filter` (
-  `idNat` int(11) DEFAULT NULL,
-  `name` varchar(50) DEFAULT NULL,
-  `ipAddressSrc` varchar(15) DEFAULT NULL,
-  `portSrc` smallint(6) DEFAULT NULL,
-  `ipAddressDst` varchar(15) DEFAULT NULL,
-  `portDst` smallint(6) DEFAULT NULL,  
-  `type` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `webiptables`.`nat_rules` (`idNat`, `nameNat`, `ipAddress`, `port`, `type`) VALUES
-	(1, 'NAT le port 22 sur le serveur Web1', '10.0.0.1', 22, 'Source Nat');
+INSERT INTO `Musique`.`Article` (`id`, `Titre`, `Genre`) VALUES
+	(1, 'Test Titre', 'Rock');
 
-INSERT INTO `webiptables`.`nat_alias` (`id`, `name`, `ipAddress`, `port`) VALUES
-	(1, 'SSH WebServer1', '10.0.0.1', 22);
+  INSERT INTO `Musique`.`Article` (`id`, `Titre`, `Genre`) VALUES
+	(2, 'Test Titre 2 ', 'Pop');
 
-INSERT INTO `webiptables`.`nat_alias` (`id`, `name`, `ipAddress`, `port`) VALUES
-	(2, 'SSH WebServer2', '10.0.0.2', 22);
+  INSERT INTO `Musique`.`Article` (`id`, `Titre`, `Genre`) VALUES
+	(3, 'Test Titre 3 ', 'Rock');
+  
+  INSERT INTO `Musique`.`Article` (`id`, `Titre`, `Genre`) VALUES
+	(4, 'Test Titre 4', 'Rap');
