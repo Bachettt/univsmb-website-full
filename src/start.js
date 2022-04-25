@@ -41,6 +41,8 @@ app.use('/js/popper.min.js', express.static('node_modules/popper.js/dist/popper.
 
 app.use('/images/musilac.jpg', express.static('views/images/musilac.jpg'));
 
+app.use('/tmpl/contact.html', express.static('views/tmpl/contact.html'));
+
 // Démarrage du serveur
 app.listen(N_PORT);
 console.log('Application Started on http://' + N_LISTEN + ':' + N_PORT);

@@ -6,7 +6,7 @@ exports.render = async function (req, res) {
 
   await defaultComponent.initialize();
   
-  var filterList = await defaultComponent.getFilterList();
+  var ContactList = await defaultComponent.getContactList();
 
-  res.render('tmpl/contact.html', { items: filterList});
+  res.render('tmpl/contact.html', { items: contactList});
 }

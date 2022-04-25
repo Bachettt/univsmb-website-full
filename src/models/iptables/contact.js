@@ -15,21 +15,21 @@ class Contact {
 
   }
 
-  async getFilterList() {
+  async getContactList() {
     try {
-      this.filterList = await connexion.query("SELECT id, name, ipAddressSrc, portSrc, ipAddressDst, portDst, type");
+      this.contactList = await connexion.query("SELECT id, name, ipAddressSrc, portSrc, ipAddressDst, portDst, type");
 
-      return this.filterList;
+      return this.ContactList;
     }
     catch (anError) {
-      console.log('Error to get filter list !');
+      console.log('Error to get Contact list !');
 
       // See error from SQL Client
       //console.log(anError);
     }
   }
-  getFilter() {
-    return this.filterList;
+  getContact() {
+    return this.ContactList;
   }
 }
 

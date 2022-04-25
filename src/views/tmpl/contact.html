@@ -1,35 +1,62 @@
 {% extends 'tmpl/layout.html' %}
 
-{% block title %}Client{% endblock %}
-{% block breadcrumb %}Client{% endblock %}
+{% block title %}Home{% endblock %}
 {% block styles %}
 <link rel="stylesheet" href="css/default.css">
 {% endblock %}
 {% block scripts %}
 {% endblock %}
 
+<script src="src/models/iptables/home.js"></script>
+
 {% block content %}
-<h2>Liste des Filtres</h2>
+
+<h2>Actualité musique</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Recherchez un genre">
 
 <table id="myTab" class="table table-striped">
     <thead>
-      <tr>
-        <th>Nom du Filtre</th>
-        <th>Adresse IP Source</th>
-        <th>Port Source</th>
-        <th>Adresse IP Dest</th>
-        <th>Port Dest</th>
-        <th>Protocole</th>
+      <tr class="Header">
+        <th>ID</th>
+        <th>Titre</th>
+        <th>Genre</th>
+        <th>url</th>
       </tr>
     </thead>
     <tbody>
-        
-{% for row in items %}
+    {% for row in items %}
+        <tr>
+            <td>{{ row.id }}</td>
+            <td>{{ row.Titre }}</td>
+            <td>{{ row.Genre }}</td>
+            <td>{{ row.url }}</td>
+            <td><input type="button" onclick="window.location.href = '/tmpl/contact.html';" value="OUI" /></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
 
-<div class="alert alert-primary" role="alert">
-    <strong>Le {{ row.nameFilter }} - {{ row.ipAddress }}</strong>
-    <br />{{ row.port }}
-</div>
+<script>
+  function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTab");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[2];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
+</script>
 
-{% endfor %}
 {% endblock %}
+
