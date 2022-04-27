@@ -11,7 +11,51 @@
 
 
 {% block content %}
+<h2>Titre du site</h2>
 
+<table id="myTab" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nom de l'alias</th>
+        <th>Adresse IP</th>
+        <th>Port</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for row in items %}
+        <tr>
+            <td>{{ row.name }}</td>
+            <td>{{ row.ipAddress }}</td>
+            <td>{{ row.port }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<form action="/validationnat"method="post">
+  <p>
+    Alias :<br>
+    <input type="text" name="Alias" size="40" maxlength="40"><br>
+
+    @IP :<br>
+    <input type="text" name="IP" size="40" maxlength="40"><br>
+
+    Port :<br>
+    <input type="text" name="Port" size="40" maxlength="40"><br>
+
+    <input type="submit" value="Soumettre"
+     onclick=""/>
+    
+  </p>
+</form>
+
+{% endblock %}
+
+
+
+
+
+{% block content %}
 <h2>Titre du site</h2>
 
 <table id="myTab" class="table table-striped">

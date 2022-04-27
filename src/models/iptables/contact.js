@@ -17,7 +17,7 @@ class Contact {
 
   async getContactList() {
     try {
-      this.contactList = await connexion.query("SELECT id, name, ipAddressSrc, portSrc, ipAddressDst, portDst, type");
+      this.contactList = await connexion.query("");
 
       return this.ContactList;
     }

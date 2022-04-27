@@ -1,4 +1,3 @@
-
 var Contact = require('../../models/iptables/contact');
 
 exports.render = async function (req, res) {
@@ -9,4 +8,4 @@ exports.render = async function (req, res) {
   var ContactList = await defaultComponent.getContactList();
 
   res.render('tmpl/contact.html', { items: contactList});
-}
+} 

@@ -1,62 +1,12 @@
 {% extends 'tmpl/layout.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Alias page{% endblock %}
+{% block breadcrumb %}Alias{% endblock %}
 {% block styles %}
 <link rel="stylesheet" href="css/default.css">
 {% endblock %}
 {% block scripts %}
 {% endblock %}
 
-<script src="src/models/iptables/home.js"></script>
 
-{% block content %}
-
-<h2>Actualité musique</h2>
-
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Recherchez un genre">
-
-<table id="myTab" class="table table-striped">
-    <thead>
-      <tr class="Header">
-        <th>ID</th>
-        <th>Titre</th>
-        <th>Genre</th>
-        <th>url</th>
-      </tr>
-    </thead>
-    <tbody>
-    {% for row in items %}
-        <tr>
-            <td>{{ row.id }}</td>
-            <td>{{ row.Titre }}</td>
-            <td>{{ row.Genre }}</td>
-            <td>{{ row.url }}</td>
-            <td><input type="button" onclick="window.location.href = '/tmpl/contact.html';" value="OUI" /></td>
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
-
-<script>
-  function myFunction() {
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("myTab");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[2];
-      if (td) {
-        txtValue = td.textContent || td.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          tr[i].style.display = "";
-        } else {
-          tr[i].style.display = "none";
-        }
-      }       
-    }
-  }
-</script>
-
-{% endblock %}
-
+<p>BONJOUR</p>
