@@ -1,13 +1,16 @@
 var express = require('express');
+var bodyparser = require('body-parser')
 var templateEngine = require('nunjucks');
 
 // Configuration d'Express
-var app = module.exports = express();
+const app = module.exports = express();
 
 const N_PORT = 3000;
 const N_LISTEN = 'localhost';
 
 app.set('view cache', false);
+
+app.use(bodyparser.urlencoded())
 
 // Configuration du lien entre Express & Nunjucks
 templateEngine.configure('views', {
@@ -15,17 +18,22 @@ templateEngine.configure('views', {
     express: app
 });
 
-var start = require('./controllers/iptables/home');
+let start = require('./controllers/iptables/home');
 app.get('/', start.render);
 
-var alias = require('./controllers/iptables/alias');
-app.get('/alias', alias.render);
-
-var home = require('./controllers/iptables/home');
+let home = require('./controllers/iptables/home');
 app.get('/home', home.render);
 
-var contact = require('./controllers/iptables/contact');
+let contact = require('./controllers/iptables/contact');
 app.get('/contact', contact.render);
+
+let article = require('./controllers/iptables/article');
+app.get('/article/:id', article.render);
+
+let comments = require('./controllers/iptables/comments')
+app.post("/postComment", comments)
+
+
 
 
 
@@ -39,7 +47,7 @@ app.use('/js/bootstrap.min.js.map', express.static('node_modules/bootstrap/dist/
 app.use('/js/jquery.slim.js', express.static('node_modules/jquery/dist/jquery.slim.js'));
 app.use('/js/popper.min.js', express.static('node_modules/popper.js/dist/popper.min.js'));
 
-app.use('/images/musilac.jpg', express.static('views/images/musilac.jpg'));
+app.use('/images', express.static('views/images'));
 
 app.use('/tmpl/contact.html', express.static('views/tmpl/contact.html'));
 

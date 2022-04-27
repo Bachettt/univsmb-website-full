@@ -1,0 +1,31 @@
+{% extends 'tmpl/layout.html' %}
+
+{% block title %}Home{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="css/default.css">
+{% endblock %}
+{% block scripts %}
+{% endblock %}
+
+<script src="src/models/iptables/home.js"></script>
+
+{% block content %}
+
+<h2>{{ content.Titre }}</h2>
+<img src="{{ content.Image }}"/>
+<p>{{ content.Contenu }}</p>
+<h2>Commentaires</h2>
+{% for row in comments %}
+<tr>
+    <td>{{ row.Pseudo }} : </td>
+    <td>{{ row.Commentaire }}</td>
+</tr>
+{% endfor %}
+<form method="POST" action="/postComment">
+    <input type="hidden" value="{{ content.id }}" name="id"/>
+    <input type="text" placeholder="Pseudo" name="pseudo"/>
+    <textarea placeholder="Laissez un commentaire..." name="commentaire"></textarea>
+    <input type="submit"/>
+</form>
+{% endblock %}
+

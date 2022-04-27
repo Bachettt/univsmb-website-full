@@ -2,7 +2,7 @@ var sql = require('../db/db_mariadb');
 
 var connexion = null;
 
-class Alias {
+class Article {
   constructor(req, res) {
     this.req = req;
     this.res = res;
@@ -15,11 +15,10 @@ class Alias {
 
   }
 
-  async getAliasList() {
+  async getArticle(id) {
     try {
-      this.aliasList = await connexion.query("SELECT id, Titre, Genre, Image, Contenu FROM `Musique`.`Article` WHERE id = ");
-
-      return this.aliasList;
+      this.article = await connexion.query("SELECT id, Titre, Genre, Image, Contenu FROM `Musique`.`Article` WHERE id = ?", [id]);
+      return this.article[0];
     }
     catch (anError) {
       console.log('Error to get alias list !');
@@ -28,9 +27,6 @@ class Alias {
       //console.log(anError);
     }
   }
-  getAlias() {
-    return this.aliasList;
-  }
 }
 
-module.exports = Alias;
+module.exports = Article;

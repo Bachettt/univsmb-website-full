@@ -27,7 +27,7 @@
     {% for row in items %}
         <tr>
             <td>{{ row.id }}</td>
-            <td><a href="/contact" id="myLinkId">{{ row.Titre }}</td></a>
+            <td><a href="{{ "/article/" + row.id }}" id="myLinkId">{{ row.Titre }}</td></a>
             <td>{{ row.Genre }}</td>
         </tr>
     {% endfor %}
