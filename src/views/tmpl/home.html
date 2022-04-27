@@ -27,11 +27,13 @@
     {% for row in items %}
         <tr>
             <td>{{ row.id }}</td>
-            <td>{{ row.Titre }}</td>
+            <td><a href="/contact" id="myLinkId">{{ row.Titre }}</td></a>
             <td>{{ row.Genre }}</td>
-            <td><input type="button" onclick="window.location.href = '{{ row.Lien }}';" value="Article " /></td>
         </tr>
     {% endfor %}
+
+
+    
     </tbody>
 </table>
 
@@ -54,6 +56,7 @@
       }       
     }
   }
+
 </script>
 
 {% endblock %}

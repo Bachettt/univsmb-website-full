@@ -21,7 +21,7 @@ INSERT INTO `Musique`.`Article` (`id`, `Titre`, `Genre`, `Lien`) VALUES
 	(1, 'Test Titre', 'Rock', 'tmp/alias.html');
 
   INSERT INTO `Musique`.`Article` (`id`, `Titre`, `Genre`, `Lien`) VALUES
-	(2, 'Test Titre 2 ', 'Pop', 'tmp/contact.html');
+	(2, 'Test Titre 2 ', 'Pop', '/contact');
 
   INSERT INTO `Musique`.`Article` (`id`, `Titre`, `Genre`, `Lien`) VALUES
 	(3, 'Test Titre 3 ', 'Rock', 'tmp/contact.html');

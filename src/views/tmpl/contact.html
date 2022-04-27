@@ -1,7 +1,7 @@
 {% extends 'tmpl/layout.html' %}
 
-{% block title %}Alias page{% endblock %}
-{% block breadcrumb %}Alias{% endblock %}
+{% block title %}Contact page{% endblock %}
+{% block breadcrumb %}Contact{% endblock %}
 {% block styles %}
 <link rel="stylesheet" href="css/default.css">
 {% endblock %}
@@ -9,4 +9,26 @@
 {% endblock %}
 
 
-<p>BONJOUR</p>
+
+{% block content %}
+<h2>PAGE DE CONTACT</h2>
+
+<div class="container">
+    <form action="mailto:timothe.bacchetta@outlook.fr?subject=Fomulaire Mon javascript" name="envoi" method=POST enctype="text/plain">
+        <b>Nom : </b><input name="nom"size=50 maxlength=50><br>
+        <b>Prenom : </b><input name="prenom"size=50 maxlength=50>
+
+        <TEXTAREA name="message" cols="60" rows="4"></TEXTAREA>
+
+        <input type="submit" value="Envoyer" name="Envoyer">
+        <input type="reset" name="Submit" value="Effacer">
+
+    </form>
+</div>
+
+{% endblock %}
+
+
+
+
+

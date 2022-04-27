@@ -15,22 +15,6 @@ class Contact {
 
   }
 
-  async getContactList() {
-    try {
-      this.contactList = await connexion.query("");
-
-      return this.ContactList;
-    }
-    catch (anError) {
-      console.log('Error to get Contact list !');
-
-      // See error from SQL Client
-      //console.log(anError);
-    }
-  }
-  getContact() {
-    return this.ContactList;
-  }
 }
 
 module.exports = Contact;
