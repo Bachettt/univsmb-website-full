@@ -21,6 +21,7 @@
     <td>{{ row.Commentaire }}</td>
 </tr>
 {% endfor %}
+
 <form method="POST" action="/postComment">
     <input type="hidden" value="{{ content.id }}" name="id"/>
     <input type="text" placeholder="Pseudo" name="pseudo"/>

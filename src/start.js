@@ -27,6 +27,9 @@ app.get('/home', home.render);
 let contact = require('./controllers/iptables/contact');
 app.get('/contact', contact.render);
 
+let apropos = require('./controllers/iptables/apropos');
+app.get('/apropos', apropos.render);
+
 let article = require('./controllers/iptables/article');
 app.get('/article/:id', article.render);
 

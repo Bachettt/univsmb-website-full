@@ -1,4 +1,4 @@
-DROP DATABASE `Musique` ;
+
 CREATE DATABASE IF NOT EXISTS `Musique` ;
 
 USE `Musique`;
@@ -56,3 +56,36 @@ INSERT INTO `Musique`.`Article` (`id`, `Titre`, `Genre`, `Image`, `Contenu`) VAL
 	(7, '"Atlantic Stereo", les répliques colombiennes de Nuits Sonores', 'Electro', '/images/electro.jpg', 'Le festival électronique dévoile une compilation réunissant producteurs européens et sud-américains, un remix inédit d’un titre de Laurent Garnier à découvrir en avant-première.
 Près de vingt ans après ses débuts dans les friches entre Rhône et Saône, Nuits Sonores est devenu aujourd hui le rendez-vous hexagonal incontournable des musiques électroniques (et pas que). Alors que le festival signait l’an passé un retour remarqué dans son écrin lyonnais après une année blanche marquée par la pandémie, une nouvelle édition grand-format se tiendra dès le mois prochain avec en haut du line-up Nicola Cruz, Para One, ou encore le come-back en duo des Grenoblois Miss Kittin et The Hacker.
 Pour patienter d’ici-là, les activistes de Nuits Sonores dévoilent cette semaine une nouvelle compilation célébrant le foisonnement toujours intact de la riche scène électronique colombienne. Le festival lyonnais avait en effet investi avec un certain succès ces terres lointaines à la fin de la dernière décennie en organisant quelques mini-éditions à Bogota et ailleurs. Las, la pandémie avait également mis fin prématurément à cette aventure qui avait pourtant permis de rapprocher producteurs européens et colombiens sur le dancefloor et au-delà.');
+
+
+INSERT INTO `Musique`.`Article` (`id`, `Titre`, `Genre`, `Image`, `Contenu`) VALUES
+	(8, '« Riptide », le nouveau titre des Chainsmokers', 'EDM', '/images/theChainsmokers.jpg', 'Ce nouveau single des Chainsmokers nous donne un avant-goût du prochain album du duo, « So Far So Good », qui sortira le 13 mai.
+Les Chainsmokers ont sorti un nouveau single, « Riptide », nouvel extrait du prochain album du groupe, So Far So Good. Ce titre émouvant est une réflexion sur la nécessité de profiter du temps que l’on passe avec une personne importante. 
+« Mais si je n’ai qu’une seule vie, voilà ce que je veux en faire, chante le duo. Et si je n’ai qu’une seule vie, je veux la vivre avec toi. »
+
+« Riptide » est le troisième single issu de So Far So Good, qui sera publié le 13 mai via Disruptor/Columbia Records. Il suit « High » et « iPad », sortis plus tôt cette année. Le précédent album du duo, World War Joy, est sorti en décembre 2019.');
+
+
+
+INSERT INTO `Musique`.`Article` (`id`, `Titre`, `Genre`, `Image`, `Contenu`) VALUES
+	(9, 'Une balle du Super Bowl signée par Dr. Dre et Eminem mise aux enchères', 'Rap', '/images/eminem.jpg', 'Outre celles de Dr. Dre et d’Eminem, la balle Wilson en cuir porte les signatures de Kendrick Lamar, Mary J. Blige et Anderson .Paak.
+Pour commémorer le Super Bowl de 2022, une balle Wilson en cuir portant les signatures des artistes de la mi-temps Eminem, Dr. Dre, Anderson .Paak, Mary J. Blige et Kendrick Lamar sera mise aux enchères.
+
+Heritage Auctions organisera la vente du 12 au 14 mai, avec une valeur indicative d’au moins 1 500 dollars.
+
+Le Pepsi Super Bowl LVI Halftime Show a eu lieu à Los Angeles pour la première fois en 30 ans. Produit par Jay-Z, il s’agissait du tout premier spectacle de la mi-temps axé sur le hip-hop.
+
+Le vendeur de la balle a recueilli les signatures alors qu’il se trouvait au match. Il ne lui manquait que les noms de Snoop Dogg et de 50 Cent, qui n’était pas un artiste officiel mais qui a quand même fait une apparition surprise en interprétant « In Da Club ». 
+e son côté, .Paak avait rejoint le plateau d’Eminem pour jouer de la batterie sur « Lose Yourself ».');
+
+
+
+INSERT INTO `Musique`.`Article` (`id`, `Titre`, `Genre`, `Image`, `Contenu`) VALUES
+	(10, 'Def Leppard vous fait découvrir un nouveau morceau', 'Rock', '/images/def-leppard.jpg', 'Def Leppard poursuit le teasing de son prochain album avec Take What You Want. De quoi patienter jusqu’au 27 mai.
+Def Leppard dévoile un nouveau morceau intitulé « Take What You Want ». Vous pouvez découvrir ce mid-tempo au riff bien accrocheur via le player ci-dessous :
+
+Take What You Want est le titre d’ouverture de Diamond Star Halos, leur prochain album, qui sortira le 27 mai. On y retrouve également « Kick« , précédemment révélé. Il s’agit de leur premier album studio à sortir en sept ans, après l’album intitulé Def Leppard, sorti en 2015. Le titre est un clin d’oeil aux paroles de « Get It On (Bang a Gong) » de T.Rex.
+
+Ce 12e album a été enregistré à distance, pendant les deux années passées marquées par la pandémie de Covid-19. Sans deadline à respecter, les cinq membres du groupe ont pu se consacrer pleinement à l’élaboration de ces 15 titres. 
+On y retrouve des influences des premiers amours du groupe, telles que David Bowie ou Mott The Hoople. On y retrouve notamment la chanteuse américaine Alison Krauss (également connue pour ses collaborations avec Robert Plant) sur deux morceaux : « This Guitar » et « Lifeless ». 
+Mike Garson, pianiste de David Bowie, fait quant à lui virevolter ses touches sur « Goodbye For Good This Time » et « Angels (Can’t Help You Now) ».');
