@@ -15,9 +15,9 @@ class Home {
 
   }
 
-  async getHomeList() {
+  async getHomeList() { //Recupere le contenu de la table Article pour l'affichage en html
     try {
-      this.HomeList = await connexion.query("SELECT id, Titre, Genre FROM Article");
+      this.HomeList = await connexion.query("SELECT id, Titre, Genre FROM Article"); //Envoie de la requete a la base de donnée
 
       return this.HomeList;
     }
@@ -33,6 +33,8 @@ class Home {
   }
 
 }
+
+
 
 function sortTable() {
   var table, rows, switching, i, x, y, shouldSwitch;

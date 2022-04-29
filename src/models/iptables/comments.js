@@ -15,7 +15,8 @@ class Comments {
 
   }
 
-  async getComments(id) {
+    /*Fonction de recuperation du contenu de la table Commentaire*/
+  async getComments(id) { 
     try {
       this.comments = await connexion.query("SELECT id, Pseudo, Commentaire FROM `Musique`.`Commentaire` WHERE id = ?", [id]);
       return this.comments;
@@ -28,13 +29,10 @@ class Comments {
     }
   }
 
-  async postComment(data){
-      try {
-          let {id, pseudo, commentaire} = data
-        await connexion.query("INSERT INTO `Musique`.`Commentaire` (`id`, `Pseudo`, `Commentaire`) VALUES (?,?,?)", [id, pseudo, commentaire])
-      } catch(e){
-          console.log(e)
-      }
+  /*Fonction d'insertion dans la bdd*/
+  async postComment(data){    
+          let {id, pseudo, commentaire} = data 
+        await connexion.query("INSERT INTO `Musique`.`Commentaire` (`id`, `Pseudo`, `Commentaire`) VALUES (?,?,?)", [id, pseudo, commentaire])   /*Les ? signifient que la fonction attend des valeurs*/
   }
 }
 

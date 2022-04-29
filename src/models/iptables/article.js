@@ -17,7 +17,7 @@ class Article {
 
   async getArticle(id) {
     try {
-      this.article = await connexion.query("SELECT id, Titre, Genre, Image, Contenu FROM `Musique`.`Article` WHERE id = ?", [id]);
+      this.article = await connexion.query("SELECT id, Titre, Genre, Image, Contenu, Date, Auteur FROM `Musique`.`Article` WHERE id = ?", [id]);
       return this.article[0];
     }
     catch (anError) {

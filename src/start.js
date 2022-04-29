@@ -18,6 +18,8 @@ templateEngine.configure('views', {
     express: app
 });
 
+
+// Route Dynamique
 let start = require('./controllers/iptables/home');
 app.get('/', start.render);
 

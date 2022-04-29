@@ -13,7 +13,7 @@
 
 <h2>Actualité musique</h2>
 
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Recherchez un genre">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Recherchez un genre"> 
 
 <table id="myTab" class="table table-striped">
     <thead>
@@ -26,9 +26,10 @@
     <tbody>
     {% for row in items %}
         <tr>
-            <td>{{ row.id }}</td>
-            <td><a href="{{ "/article/" + row.id }}" id="myLinkId">{{ row.Titre }}</td></a>
-            <td>{{ row.Genre }}</td>
+            <td>{{ row.id }}</td>   
+            <td><a href="{{ "/article/" + row.id }}" id="myLinkId">{{ row.Titre }}</td></a>   <!--Place un lien hypertexte vers l'article defini par son id lors de l'affichage du contenu-de la bdd -->
+            <td>{{ row.Genre }}</td>                                                            <!--Print le contenu de la table genre dans le tableau-->
+   
         </tr>
     {% endfor %}
 
@@ -37,21 +38,23 @@
     </tbody>
 </table>
 
+
+<!--Fonction de recherche par genre dans le tableau-->
 <script>
   function myFunction() {
     var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("myTab");
-    tr = table.getElementsByTagName("tr");
+    input = document.getElementById("myInput"); /*Recupere le contenu de la barre de recherche*/
+    filter = input.value.toUpperCase();       /*Met toute les lettres en majuscule */
+    table = document.getElementById("myTab"); /*Recupere le tableau*/
+    tr = table.getElementsByTagName("tr");   /*Recupere la partie contenu du tableau*/
     for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[2];
-      if (td) {
+      td = tr[i].getElementsByTagName("td")[2]; /*Se place dans la colonne de genre*/
+      if (td) { 
         txtValue = td.textContent || td.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          tr[i].style.display = "";
+          tr[i].style.display = "";   /*Affiche le resultat de la comparaison*/
         } else {
-          tr[i].style.display = "none";
+          tr[i].style.display = "none"; /*Ne l'affiche pas si la condition n'est pas réalisée*/
         }
       }       
     }

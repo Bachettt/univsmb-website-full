@@ -12,8 +12,7 @@ exports.render = async function (req, res) {
   await comments.initialize();
   
   var content = await defaultComponent.getArticle(id);
-  let commentsForArticle = await comments.getComments(id)
-  console.log(commentsForArticle)
+  let commentsForArticle = await comments.getComments(id);
 
   res.render('tmpl/article.html', { content, comments: commentsForArticle });
 }

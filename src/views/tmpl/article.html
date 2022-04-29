@@ -10,20 +10,24 @@
 <script src="src/models/iptables/home.js"></script>
 
 {% block content %}
-
+<h5> Date : {{ content.Date }}</h5> <!--Affichage de la date dans la ligne de la base de donnée-->
+<h5> Auteur : {{ content.Auteur }}</h5>
 <h2>{{ content.Titre }}</h2>
+
 <img src="{{ content.Image }}"/>
 <p>{{ content.Contenu }}</p>
 <h2>Commentaires</h2>
 {% for row in comments %}
-<tr>
-    <td>{{ row.Pseudo }} : </td>
+<tr>                     <!--Id n'est pas affiché mais il est pris en compte pour biens selectionner la bonne table pour le bon article -->
+    <td>{{ row.Pseudo }} : </td> <!--Affichage de tous le contenu de la table Pseudo dans commmentaire -->
     <td>{{ row.Commentaire }}</td>
 </tr>
 {% endfor %}
 
-<form method="POST" action="/postComment">
-    <input type="hidden" value="{{ content.id }}" name="id"/>
+
+<!--Formulaire d'envoi de commentaire dans la base de donnée-->
+<form method="POST" action="/postComment">      
+    <input type="hidden" value="{{ content.id }}" name="id"/> <!--N'affiche pas la valeur d'ID-->
     <input type="text" placeholder="Pseudo" name="pseudo"/>
     <textarea placeholder="Laissez un commentaire..." name="commentaire"></textarea>
     <input type="submit"/>
