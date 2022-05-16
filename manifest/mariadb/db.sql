@@ -1,4 +1,4 @@
-DROP DATABASE `Musique`;
+
 CREATE DATABASE IF NOT EXISTS `Musique` ;
 
 USE `Musique`;
